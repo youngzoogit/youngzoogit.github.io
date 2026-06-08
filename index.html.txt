@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>영주의 테스트 사이트</title>
+</head>
+<body>
+    <h1>Netlify 배포 성공!</h1>
+    <p>첫 번째 웹사이트입니다.</p>
+</body>
+</html>
