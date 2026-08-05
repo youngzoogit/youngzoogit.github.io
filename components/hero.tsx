@@ -1,6 +1,7 @@
 'use client'
 
 import { useRef } from 'react'
+import Link from 'next/link'
 import { motion, useMotionValue, useMotionTemplate } from 'motion/react'
 import { ArrowRight } from 'lucide-react'
 import { GithubIcon } from '@/components/brand-icons'
@@ -130,7 +131,7 @@ export function Hero() {
           transition={{ duration: 0.7, delay: 0.4 }}
           className="mt-9 flex flex-wrap items-center justify-center gap-3"
         >
-          <Button size="lg" render={<a href="#projects" />}>
+          <Button size="lg" render={<Link href="/projects" />}>
             프로젝트 보기
             <ArrowRight className="size-4" />
           </Button>

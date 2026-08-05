@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'motion/react'
 import { Menu, X } from 'lucide-react'
 import { GithubIcon } from '@/components/brand-icons'
@@ -10,6 +11,7 @@ import { navLinks, site } from '@/lib/data'
 import { cn } from '@/lib/utils'
 
 export function Navbar() {
+  const pathname = usePathname()
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
 
@@ -34,7 +36,7 @@ export function Navbar() {
             scrolled && 'glass border-border shadow-lg shadow-black/20',
           )}
         />
-        <Link href="#home" className="group flex items-center gap-2">
+        <Link href="/" className="group flex items-center gap-2">
           <span className="grid size-8 place-items-center rounded-lg bg-primary font-mono text-sm font-bold text-primary-foreground">
             H
           </span>
@@ -46,7 +48,10 @@ export function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className="rounded-lg px-3 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
+              className={cn(
+                'rounded-lg px-3 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground',
+                pathname === link.href && 'text-foreground',
+              )}
             >
               {link.label}
             </Link>
@@ -85,7 +90,10 @@ export function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  className="rounded-lg px-4 py-3 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+                  className={cn(
+                    'rounded-lg px-4 py-3 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground',
+                    pathname === link.href && 'bg-muted text-foreground',
+                  )}
                 >
                   {link.label}
                 </Link>

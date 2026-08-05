@@ -8,13 +8,13 @@ export const site = {
 }
 
 export const navLinks = [
-  { label: '홈', href: '#home' },
-  { label: '실무 경력', href: '#work-experience' },
-  { label: '프로젝트', href: '#projects' },
-  { label: '기술', href: '#skills' },
-  { label: '아키텍처', href: '#architecture' },
-  { label: '경력', href: '#experience' },
-  { label: 'GitHub', href: '#github' },
+  { label: '홈', href: '/' },
+  { label: '실무 경력', href: '/experience' },
+  { label: '프로젝트', href: '/projects' },
+  { label: '기술', href: '/skills' },
+  { label: '아키텍처', href: '/architecture' },
+  { label: '경력', href: '/journey' },
+  { label: 'GitHub', href: '/github' },
 ]
 
 export const floatingTech = [
